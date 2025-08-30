@@ -1,0 +1,41 @@
+# Student Model Architecture
+student_model:
+  vocab_size: 32000
+  hidden_size: 768
+  num_attention_heads: 12
+  num_hidden_layers: 12
+  intermediate_size: 3072
+  max_position_embeddings: 2048
+  layer_norm_eps: 1e-5
+  dropout_rate: 0.1
+  attention_dropout: 0.1
+  activation_function: "gelu"
+  
+# Teacher Model Configuration
+teacher_model:
+  name: "gpt-oss-20b"
+  backend: "ollama"  # or "lmstudio"
+  api_url: "http://localhost:11434"
+  max_tokens: 2048
+  temperature: 0.7
+  
+# Tokenizer Configuration
+tokenizer:
+  type: "sentencepiece"
+  vocab_size: 32000
+  character_coverage: 0.99995
+  model_type: "bpe"
+  special_tokens:
+    - "<pad>"
+    - "<s>"
+    - "</s>"
+    - "<unk>"
+    - "<mask>"
+
+# Hardware Optimization
+hardware:
+  device: "mps"  # Metal Performance Shaders for M4 Max
+  mixed_precision: true
+  gradient_checkpointing: true
+  max_memory_gb: 32
+  compile_model: false  # Set to true for PyTorch 2.0 compilation
