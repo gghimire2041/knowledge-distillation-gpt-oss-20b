@@ -1,0 +1,38 @@
+# Evaluation Benchmarks
+benchmarks:
+  - name: "nepali_qa"
+    metric: "exact_match"
+    weight: 0.3
+    description: "Question answering in Nepali"
+  - name: "nepali_translation"
+    metric: "bleu"
+    weight: 0.3
+    description: "English to Nepali translation"
+  - name: "nepali_summarization"
+    metric: "rouge_l"
+    weight: 0.2
+    description: "Nepali text summarization"
+  - name: "nepali_sentiment"
+    metric: "f1"
+    weight: 0.2
+    description: "Nepali sentiment analysis"
+
+# Performance Thresholds
+thresholds:
+  minimum_performance: 0.8      # 80% retention requirement
+  speed_improvement: 10         # 10x faster than teacher
+  model_size_mb: 800           # Maximum 800MB
+  memory_usage_gb: 4           # Maximum 4GB inference memory
+
+# Evaluation Settings
+evaluation:
+  batch_size: 16
+  max_samples: 1000            # Limit samples for faster evaluation
+  use_cache: true              # Cache evaluation results
+  
+# Output Configuration
+output:
+  save_predictions: true
+  prediction_file: "outputs/metrics/predictions.json"
+  detailed_metrics: true
+  generate_report: true
