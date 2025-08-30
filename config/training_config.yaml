@@ -1,0 +1,52 @@
+# Data Configuration
+data:
+  nepali_sources:
+    - "wikipedia_ne"
+    - "common_crawl_ne"
+    - "news_corpus_ne"
+    - "literature_ne"
+  max_length: 1024
+  batch_size: 8
+  eval_batch_size: 16
+  num_workers: 4
+  shuffle: true
+  
+# Training Hyperparameters
+training:
+  num_epochs: 3
+  learning_rate: 5e-4
+  weight_decay: 0.01
+  warmup_steps: 1000
+  max_steps: 50000
+  gradient_accumulation_steps: 4
+  max_grad_norm: 1.0
+  use_wandb: true
+  
+# Distillation Parameters
+distillation:
+  temperature: 4.0  # Knowledge distillation temperature
+  alpha: 0.7        # Weight for KD loss
+  beta: 0.3         # Weight for task loss
+  soft_target_loss: "kl_divergence"
+  hard_target_loss: "cross_entropy"
+  
+# Evaluation Configuration
+evaluation:
+  eval_steps: 500
+  save_steps: 1000
+  logging_steps: 100
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  
+# Checkpointing
+checkpointing:
+  output_dir: "./models/student"
+  save_total_limit: 3
+  load_best_model_at_end: true
+  resume_from_checkpoint: null  # Path to checkpoint to resume from
+  
+# Logging
+logging:
+  log_level: "INFO"
+  log_to_file: true
+  log_file: "outputs/logs/training.log"
