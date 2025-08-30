@@ -351,9 +351,7 @@ mypy src/
 - Test with smaller batch sizes
 
 ### Getting Help
-- 📧 Email: support@your-domain.com
-- 💬 Discord: [Your Discord Server]
-- 🐛 Issues: [GitHub Issues](https://github.com/your-username/nepali-distillation/issues)
+- 📧 Email: admin@uttarai.com
 
 ---
 
