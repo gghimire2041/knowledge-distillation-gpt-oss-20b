@@ -1,0 +1,46 @@
+# Core ML/AI Libraries
+torch>=2.1.0
+transformers>=4.35.0
+datasets>=2.14.0
+tokenizers>=0.14.0
+accelerate>=0.24.0
+evaluate>=0.4.0
+
+# Training & Optimization
+wandb>=0.16.0
+tensorboard>=2.14.0
+scikit-learn>=1.3.0
+
+# Data Processing
+pandas>=2.1.0
+numpy>=1.24.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+scrapy>=2.11.0
+langdetect>=1.0.9
+nltk>=3.8.0
+
+# Tokenization & NLP
+sentencepiece>=0.1.99
+sacrebleu>=2.3.0
+rouge-score>=0.1.2
+
+# Web Framework & API
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.4.0
+aiohttp>=3.9.0
+
+# Configuration & Utils
+pyyaml>=6.0
+tqdm>=4.66.0
+psutil>=5.9.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Mobile Export (Optional)
+onnx>=1.15.0
+onnxruntime>=1.16.0
+# coremltools>=7.0  # Uncomment for iOS export
