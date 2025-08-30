@@ -364,6 +364,7 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ## 🙏 Acknowledgments
 
 - **Anthropic** for knowledge distillation research
+- **OpenAI** for open-source gpt-oss-20b
 - **Hugging Face** for transformer implementations
 - **PyTorch** team for MPS optimization
 - **Nepali NLP community** for language resources
